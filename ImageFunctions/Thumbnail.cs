@@ -66,6 +66,7 @@ namespace ImageFunctions
                     default:
                         break;
                 }
+                log.LogInformation(extension);
             }
 
             return encoder;
@@ -87,6 +88,7 @@ namespace ImageFunctions
 
                     if (encoder != null)
                     {
+                        log.LogInformation("here");
                         var thumbnailWidth = Convert.ToInt32(Environment.GetEnvironmentVariable("THUMBNAIL_WIDTH"));
                         var thumbContainerName = Environment.GetEnvironmentVariable("THUMBNAIL_CONTAINER_NAME");
                         var storageAccount = CloudStorageAccount.Parse(BLOB_STORAGE_CONNECTION_STRING);
